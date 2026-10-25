@@ -3,9 +3,9 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/evagr11/Multi-Move"><img alt="Ver Código" src="https://img.shields.io/badge/Ver_Código-181717?style=for-the-badge&logo=github&logoColor=white"></a>
-  <a href="https://evagr11.github.io/Curriculum/proyectos/multi-move.html"><img alt="Ver Web" src="https://img.shields.io/badge/Ver_Web-4A90E2?style=for-the-badge&logo=google-chrome&logoColor=white"></a>
-  <a href="https://evagr.itch.io/multi-move"><img alt="Ver en itch.io" src="https://img.shields.io/badge/Ver_en_itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white"></a>
+  <a href="https://github.com/evagr11/Multi-Move" target="_blank"><img alt="Ver Código" src="https://img.shields.io/badge/Ver_Código-181717?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href="https://evagr11.github.io/Curriculum/proyectos/multi-move.html" target="_blank"><img alt="Ver Web" src="https://img.shields.io/badge/Ver_Web-4A90E2?style=for-the-badge&logo=google-chrome&logoColor=white"></a>
+  <a href="https://evagr.itch.io/multi-move" target="_blank"><img alt="Ver en itch.io" src="https://img.shields.io/badge/Ver_en_itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white"></a>
 </div>
 
 <br>
@@ -27,17 +27,46 @@
 
 ### ✨ Características principales:
 
-*   🤸 **Sistema de Movimiento Avanzado:** Controla un personaje que puede alternar entre **6 modos de movimiento** (Básico, Cohete, Planeador, etc.) al instante pulsando la tecla `M`.
-*   🧩 **Arquitectura Modular con `ScriptableObjects`:** Cada modo de movimiento es un `ScriptableObject` independiente, lo que permite configurar y añadir nuevas físicas (gravedad, aceleración, saltos) de forma sencilla y desacoplada.
-*   🎨 **Feedback Visual Dinámico:** El color del personaje cambia según su estado vertical (subida, pico, caída, en suelo). Además, se activan partículas para saltos, colisiones y movimiento.
-*   🎥 **Cámara Suave:** Un script de seguimiento de cámara (`CameraFollow`) proporciona un movimiento fluido y profesional que acompaña al jugador.
+*   🤸 **Sistema de Movimiento Avanzado:** Controla un personaje que puede alternar entre **6 modos de movimiento** (Basic, Glider, Hectic, Rocket, Slippy Flappy y Underwater) al instante pulsando la tecla `M`. Un aviso en pantalla muestra durante 2 segundos el modo activo.
+*   🧩 **Arquitectura Modular con `ScriptableObjects`:** Cada modo de movimiento es un `ScriptableObject` independiente con 14 parámetros, lo que permite crear nuevas físicas desde el editor sin tocar código (*Create → Movement Stats*).
+*   🦘 **Salto con sensación de juego:** La altura depende de cuánto tiempo mantienes `W` (`maxJumpTime`), se puede saltar en el aire tantas veces como permita el modo (`onAirJumps`) y la **gravedad cambia en cada fase del salto**: subida, pico y caída. Así el salto se siente controlable en lugar de una parábola rígida.
+*   🎨 **Feedback Visual Dinámico:** El color del personaje cambia con cada salto en el aire siguiendo un degradado, y las partículas cambian de color según la fase (subida, pico, caída o en suelo). Hay partículas para saltar, para intentar saltar sin saltos disponibles, al aterrizar y al moverse.
+*   🎥 **Cámara Suave:** Un script de seguimiento (`CameraFollow`) acompaña al jugador con `Vector3.SmoothDamp`.
+
+### 🎮 Controles
+
+<div align="center">
+
+| Tecla | Acción |
+| :---: | :----- |
+| `A` / `←` | Moverse a la izquierda |
+| `D` / `→` | Moverse a la derecha |
+| `W` | Saltar (mantener para saltar más alto) |
+| `M` | Cambiar de modo de movimiento |
+
+</div>
+
+### ⚙️ Los 6 modos de movimiento
+
+<div align="center">
+
+| Modo | Saltos en el aire | Fuerza de salto | Gravedad (subida / pico / caída) | Cómo se siente |
+| :--- | :---------------: | :-------------: | :------------------------------: | :------------- |
+| **Basic** | 1 | 10 | 2 / 3 / 4 | Plataformas clásico y equilibrado |
+| **Glider** | 2 | 8 | 1 / 1.5 / 2 | Cae despacio (caída máx. 5): planea |
+| **Hectic** | 3 | 12 | 5 / 6 / 8 | Muy rápido y nervioso |
+| **Rocket** | 1 | 15 | 3 / 6 / 10 | Sube como un cohete y cae en picado |
+| **Slippy Flappy** | 5 | 7 | 0.5 / 0.8 / 2 | Resbala en el suelo y aletea en el aire |
+| **Underwater** | 99 | 7 | 0.5 / 0.3 / 0.5 | Como nadar: saltos infinitos y lentos |
+
+</div>
 
 ### 🖼️ Capturas del Juego
 
-| Captura 1                                        | Captura 2                                      |
+| Movimiento | Cambio de modo |
 | :----------------------------------------------------------: | :------------------------------------------------------: |
-| <img src="https://github.com/user-attachments/assets/12c74a69-3316-4394-a5ac-d417081f0c8f" alt="Imagen de una partida" width="100%"/> | <img src="https://github.com/user-attachments/assets/3dad326d-67dc-43f5-9a8b-90b7a1e5b1ae" alt="Jugador se cura" width="100%"/> |
-| *Captura movimiento*                              | *Captura cambio de movimiento*         |
+| <img src="https://github.com/user-attachments/assets/12c74a69-3316-4394-a5ac-d417081f0c8f" alt="Imagen de una partida" width="100%"/> | <img src="https://github.com/user-attachments/assets/3dad326d-67dc-43f5-9a8b-90b7a1e5b1ae" alt="Aviso en pantalla al cambiar de modo de movimiento" width="100%"/> |
+| *El cubo en movimiento con sus partículas.* | *Aviso del modo activo al pulsar `M`.* |
 
 # 🧠 Contexto del Proyecto
 
@@ -51,11 +80,20 @@ Este proyecto fue desarrollado como parte de la asignatura de **Programación** 
   <img alt="Status" src="https://img.shields.io/badge/Status-MVP-brightgreen?style=for-the-badge">
 </div>
 
-| Tecnología | Descripción                                          |
-| :--------- | :--------------------------------------------------- |
-| **Engine** | `Unity 2D` - Motor de juego para el desarrollo 2D/3D. |
-| **Lenguaje** | `C#` - Lenguaje principal para la lógica del juego. |
-| **Entorno**  | `Visual Studio` - IDE para la escritura de scripts.  |
+<br>
+
+<div align="center">
+
+| Tecnología | Descripción |
+| :--------- | :---------- |
+| **Motor** | `Unity 2022.3 LTS` (2D) |
+| **Lenguaje** | `C#` |
+| **Físicas** | `Rigidbody2D`, `Physics2D.Raycast` para detectar el suelo, material sin fricción |
+| **Datos** | `ScriptableObject` para cada modo de movimiento |
+| **Interfaz** | `TextMesh Pro` para el aviso de modo |
+| **Entorno** | `Visual Studio` |
+
+</div>
 
 # 📂 Estructura del Proyecto
 
@@ -73,11 +111,13 @@ Multi-Move/
 │   │   └── Underwater.asset
 │   ├── Scenes/
 │   │   └── SampleScene.unity
-│   ├── CameraFollow.cs
-│   ├── Movement.cs
-│   ├── MovementStats.cs
-│   ├── MovementTypes.cs
-│   └── ... (otros assets)
+│   ├── CameraFollow.cs           # Cámara que sigue al jugador
+│   ├── ContantRotationReset.cs   # Impide que el objeto gire (rotación fija)
+│   ├── Movement.cs               # Movimiento, saltos, gravedad por fase, colores y partículas
+│   ├── MovementStats.cs          # ScriptableObject con los parámetros de cada modo
+│   ├── MovementTypes.cs          # Cambio de modo con la tecla M y aviso en pantalla
+│   ├── SinFriccion.physicsMaterial2D
+│   └── TextMesh Pro/             # Paquete de texto de Unity
 ├── Packages/
 │   └── manifest.json
 └── ProjectSettings/
@@ -86,7 +126,7 @@ Multi-Move/
 
 # 🚀 Cómo Utilizar el Proyecto
 
-Para ejecutar este proyecto localmente, necesitarás tener instalado Unity Hub y una versión compatible de Unity.
+Para ejecutar este proyecto localmente necesitas **Unity Hub** y **Unity 2022.3 LTS** (el proyecto se creó con la 2022.3.50f1). Si solo quieres jugar, está [en itch.io](https://evagr.itch.io/multi-move).
 
 1.  **Clona el repositorio:**
     ```bash
@@ -107,7 +147,7 @@ Para ejecutar este proyecto localmente, necesitarás tener instalado Unity Hub y
     *   Presiona el botón de **Play** en la parte superior central del editor de Unity para iniciar el juego.
     *   Usa `A/D` o las flechas para moverte, `W` para saltar y `M` para cambiar el modo de movimiento.
 
-</br>
+<br>
 
 <div align="center">
   <p>Creado por <strong>Eva Gallardo</strong></p>

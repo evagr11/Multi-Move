@@ -4,7 +4,7 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform player;
     public float smoothness = 0.15f;
-    public Vector3 offset; // Distancia entre la c·mara y el jugador
+    public Vector3 offset; // Distancia entre la c√°mara y el jugador
 
     private Vector3 velocity = new Vector3(0, 0, 0);
 
@@ -20,15 +20,8 @@ public class CameraFollow : MonoBehaviour
     {
         Vector3 targetPosition = player.position + offset;
 
-        // Si la velocidad es muy baja, se mueve la c·mara directamente
-        if (velocity.sqrMagnitude < 0.01f)
-        {
-            velocity = new Vector3(0, 0, 0);
-            transform.position = targetPosition;
-        }
-        else
-        {
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothness);
-        }
+        // Se acerca poco a poco a la posici√≥n objetivo. SmoothDamp guarda en 'velocity'
+        // la velocidad actual de la c√°mara para que el movimiento sea suave.
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothness);
     }
 }
