@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0%3A7afffd%2C50%3Aa97aff%2C100%3AF3E9DC&height=200&section=header&text=Milti-Move&fontSize=60&fontColor=fff&fontAlignY=38&desc=Sandbox+de+plataformas+2D+con+6+modos+de+movimiento+intercambiables&descAlignY=62&descSize=18" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0%3A7afffd%2C50%3Aa97aff%2C100%3AF3E9DC&height=200&section=header&text=Multi-Move&fontSize=60&fontColor=fff&fontAlignY=38&desc=Sandbox+de+plataformas+2D+con+6+modos+de+movimiento+intercambiables&descAlignY=62&descSize=18" width="100%"/>
 </div>
 
 <div align="center">
