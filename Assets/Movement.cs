@@ -3,6 +3,11 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
+/// <summary>
+/// Movimiento de plataformas en 2D: andar, saltar (más alto cuanto más se mantiene W),
+/// saltos en el aire, gravedad distinta al subir, en lo alto y al caer, partículas y colores
+/// según el estado. Los valores salen de un <see cref="MovementStats"/>.
+/// </summary>
 public class Movement : MonoBehaviour
 {
     [Header("Components")]
@@ -21,6 +26,7 @@ public class Movement : MonoBehaviour
     [Header("Jump Execution")]
     private float pressTime = 0f;
     private bool isJumping = false;
+    /// <summary>Saltos dados en el aire desde que tocó el suelo por última vez.</summary>
     public float jumpCount;
 
     [Header("Particles")]
@@ -41,6 +47,9 @@ public class Movement : MonoBehaviour
 
 
     // Start is called before the first frame update
+    /// <summary>
+    /// Guarda las referencias a los componentes y para las partículas de salto y de choque.
+    /// </summary>
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -54,6 +63,11 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
+    /// <summary>
+    /// Lee el teclado (A/D o flechas para moverse, W para saltar), comprueba con un
+    /// <c>Raycast</c> si está en el suelo y cambia la gravedad y los colores según si sube,
+    /// está en lo alto o cae.
+    /// </summary>
     void Update()
     {
         direction = Vector2.zero;
@@ -129,6 +143,10 @@ public class Movement : MonoBehaviour
         wasOnGroundPreviousFrame = isOnGround;
     }
 
+    /// <summary>
+    /// Aplica la física: acelera hasta la velocidad máxima del suelo o del aire, aplica el salto,
+    /// la fricción y el límite de velocidad de caída.
+    /// </summary>
     void FixedUpdate()
     {
         if (isOnGround)
@@ -193,6 +211,7 @@ public class Movement : MonoBehaviour
         }
     }
 
+    /// <summary>Dibuja en el editor el rayo que comprueba si toca el suelo.</summary>
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -200,6 +219,10 @@ public class Movement : MonoBehaviour
         Gizmos.DrawLine(groundCheckOrigin.position, groundCheckOrigin.position + Vector3.down * groundCheckDistance);
     }
 
+    /// <summary>
+    /// Cambia los valores de movimiento por los de otro modo.
+    /// </summary>
+    /// <param name="newStats">Valores del modo nuevo.</param>
     public void UpdateStats(MovementStats newStats)
     {
         stats = newStats;

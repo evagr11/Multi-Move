@@ -1,0 +1,871 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Multi-Move: Referencia de la clase Movement</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Multi-Move
+   </div>
+   <div id="projectbrief">Movimiento de plataformas 2D con varios modos de salto que se cambian con la tecla M.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classMovement.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="classMovement-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase Movement</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Movimiento de plataformas en 2D: andar, saltar (más alto cuanto más se mantiene W), saltos en el aire, gravedad distinta al subir, en lo alto y al caer, partículas y colores según el estado. Los valores salen de un <a class="el" href="classMovementStats.html" title="Valores de un tipo de movimiento (suelo, salto y aire). Es un ScriptableObject: hay un archivo por ca...">MovementStats</a>.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de Movement</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classMovement.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a4bb0fb1d022923d6b09dfed9e02acbb6" id="r_a4bb0fb1d022923d6b09dfed9e02acbb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bb0fb1d022923d6b09dfed9e02acbb6">UpdateStats</a> (<a class="el" href="classMovementStats.html">MovementStats</a> newStats)</td></tr>
+<tr class="memdesc:a4bb0fb1d022923d6b09dfed9e02acbb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cambia los valores de movimiento por los de otro modo.  <br /></td></tr>
+<tr class="separator:a4bb0fb1d022923d6b09dfed9e02acbb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a0be9677f9227803bc466665501d7a1d5" id="r_a0be9677f9227803bc466665501d7a1d5"><td class="memItemLeft" align="right" valign="top">Rigidbody2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0be9677f9227803bc466665501d7a1d5">rb</a></td></tr>
+<tr class="separator:a0be9677f9227803bc466665501d7a1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d9c9dea47310f1e9167f86d143f362" id="r_a98d9c9dea47310f1e9167f86d143f362"><td class="memItemLeft" align="right" valign="top">PhysicsMaterial2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98d9c9dea47310f1e9167f86d143f362">noFriction</a></td></tr>
+<tr class="separator:a98d9c9dea47310f1e9167f86d143f362"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79846a25dbd40493d3a1d4828aecd4d3" id="r_a79846a25dbd40493d3a1d4828aecd4d3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79846a25dbd40493d3a1d4828aecd4d3">jumpCount</a></td></tr>
+<tr class="memdesc:a79846a25dbd40493d3a1d4828aecd4d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saltos dados en el aire desde que tocó el suelo por última vez.  <br /></td></tr>
+<tr class="separator:a79846a25dbd40493d3a1d4828aecd4d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b6c28feaef8796ce0564b4adfc9ca5" id="r_ad1b6c28feaef8796ce0564b4adfc9ca5"><td class="memItemLeft" align="right" valign="top">SpriteRenderer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1b6c28feaef8796ce0564b4adfc9ca5">spriteRenderer</a></td></tr>
+<tr class="separator:ad1b6c28feaef8796ce0564b4adfc9ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6e9ab6f48c944a117539227bdf05e0" id="r_ace6e9ab6f48c944a117539227bdf05e0"><td class="memItemLeft" align="right" valign="top">ParticleSystem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace6e9ab6f48c944a117539227bdf05e0">jumpParticles</a></td></tr>
+<tr class="separator:ace6e9ab6f48c944a117539227bdf05e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c556d385190dd1b9a8b918df3b9007" id="r_a89c556d385190dd1b9a8b918df3b9007"><td class="memItemLeft" align="right" valign="top">ParticleSystem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89c556d385190dd1b9a8b918df3b9007">noJumpParticles</a></td></tr>
+<tr class="separator:a89c556d385190dd1b9a8b918df3b9007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc8fbc800f31d08f23dd0d3eb1ed5e7" id="r_a1dc8fbc800f31d08f23dd0d3eb1ed5e7"><td class="memItemLeft" align="right" valign="top">ParticleSystem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dc8fbc800f31d08f23dd0d3eb1ed5e7">collisionParticles</a></td></tr>
+<tr class="separator:a1dc8fbc800f31d08f23dd0d3eb1ed5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3696dc016a11bae0e5dc8ab625cb4ab8" id="r_a3696dc016a11bae0e5dc8ab625cb4ab8"><td class="memItemLeft" align="right" valign="top">ParticleSystem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3696dc016a11bae0e5dc8ab625cb4ab8">movementParticles</a></td></tr>
+<tr class="separator:a3696dc016a11bae0e5dc8ab625cb4ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add5db38b0ed988ff05aa4a9a60b219db" id="r_add5db38b0ed988ff05aa4a9a60b219db"><td class="memItemLeft" align="right" valign="top">ParticleSystem.MainModule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add5db38b0ed988ff05aa4a9a60b219db">mainModule</a></td></tr>
+<tr class="separator:add5db38b0ed988ff05aa4a9a60b219db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a5382914e6da64dbf89460062fdb4a08a" id="r_a5382914e6da64dbf89460062fdb4a08a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5382914e6da64dbf89460062fdb4a08a">Start</a> ()</td></tr>
+<tr class="memdesc:a5382914e6da64dbf89460062fdb4a08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda las referencias a los componentes y para las partículas de salto y de choque.  <br /></td></tr>
+<tr class="separator:a5382914e6da64dbf89460062fdb4a08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9278ecc9daea58c9bc3737cc388e58f" id="r_ad9278ecc9daea58c9bc3737cc388e58f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9278ecc9daea58c9bc3737cc388e58f">Update</a> ()</td></tr>
+<tr class="memdesc:ad9278ecc9daea58c9bc3737cc388e58f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee el teclado (A/D o flechas para moverse, W para saltar), comprueba con un <code>Raycast</code> si está en el suelo y cambia la gravedad y los colores según si sube, está en lo alto o cae.  <br /></td></tr>
+<tr class="separator:ad9278ecc9daea58c9bc3737cc388e58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9687a887cb7ae16793f2fdc42d00d11c" id="r_a9687a887cb7ae16793f2fdc42d00d11c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9687a887cb7ae16793f2fdc42d00d11c">FixedUpdate</a> ()</td></tr>
+<tr class="memdesc:a9687a887cb7ae16793f2fdc42d00d11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aplica la física: acelera hasta la velocidad máxima del suelo o del aire, aplica el salto, la fricción y el límite de velocidad de caída.  <br /></td></tr>
+<tr class="separator:a9687a887cb7ae16793f2fdc42d00d11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a900c81fb712029854f384394a643c138" id="r_a900c81fb712029854f384394a643c138"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a900c81fb712029854f384394a643c138">OnDrawGizmos</a> ()</td></tr>
+<tr class="memdesc:a900c81fb712029854f384394a643c138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dibuja en el editor el rayo que comprueba si toca el suelo.  <br /></td></tr>
+<tr class="separator:a900c81fb712029854f384394a643c138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a5bc5e24a6b5ad176d2ac3bd7dd7dcff6" id="r_a5bc5e24a6b5ad176d2ac3bd7dd7dcff6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMovementStats.html">MovementStats</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a></td></tr>
+<tr class="separator:a5bc5e24a6b5ad176d2ac3bd7dd7dcff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb5351eb6e3c0804c79b87ee1aba6d5f" id="r_acb5351eb6e3c0804c79b87ee1aba6d5f"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb5351eb6e3c0804c79b87ee1aba6d5f">direction</a></td></tr>
+<tr class="separator:acb5351eb6e3c0804c79b87ee1aba6d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5862498720850430d4099274c280091" id="r_ac5862498720850430d4099274c280091"><td class="memItemLeft" align="right" valign="top">LayerMask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5862498720850430d4099274c280091">groundLayer</a></td></tr>
+<tr class="separator:ac5862498720850430d4099274c280091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab94058a26cb4a00f58809917dae07a6" id="r_aab94058a26cb4a00f58809917dae07a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab94058a26cb4a00f58809917dae07a6">isOnGround</a> = false</td></tr>
+<tr class="separator:aab94058a26cb4a00f58809917dae07a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9215338c4b90587c18157c1ccdf07d6" id="r_af9215338c4b90587c18157c1ccdf07d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9215338c4b90587c18157c1ccdf07d6">wasOnGroundPreviousFrame</a> = false</td></tr>
+<tr class="separator:af9215338c4b90587c18157c1ccdf07d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a020a539219fa250419348927d89a13" id="r_a9a020a539219fa250419348927d89a13"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a020a539219fa250419348927d89a13">groundCheckDistance</a> = 0.1f</td></tr>
+<tr class="separator:a9a020a539219fa250419348927d89a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ff13e4f4ba7da5acb189737a6986bcf" id="r_a9ff13e4f4ba7da5acb189737a6986bcf"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ff13e4f4ba7da5acb189737a6986bcf">groundCheckOrigin</a></td></tr>
+<tr class="separator:a9ff13e4f4ba7da5acb189737a6986bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc716ffe71e1606b7c0d8fd80b73958" id="r_a1dc716ffe71e1606b7c0d8fd80b73958"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dc716ffe71e1606b7c0d8fd80b73958">pressTime</a> = 0f</td></tr>
+<tr class="separator:a1dc716ffe71e1606b7c0d8fd80b73958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a077039964c45c77e86b0698b6de84511" id="r_a077039964c45c77e86b0698b6de84511"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a077039964c45c77e86b0698b6de84511">isJumping</a> = false</td></tr>
+<tr class="separator:a077039964c45c77e86b0698b6de84511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a235501570fdea3cf1a858ac1af010db9" id="r_a235501570fdea3cf1a858ac1af010db9"><td class="memItemLeft" align="right" valign="top">Gradient&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a235501570fdea3cf1a858ac1af010db9">onAirColors</a></td></tr>
+<tr class="separator:a235501570fdea3cf1a858ac1af010db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46e58b115fde6eaa8e47ff82d2a28389" id="r_a46e58b115fde6eaa8e47ff82d2a28389"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46e58b115fde6eaa8e47ff82d2a28389">groundedColor</a></td></tr>
+<tr class="separator:a46e58b115fde6eaa8e47ff82d2a28389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aeefafc6382d5e6f770c08d0a192bcd" id="r_a0aeefafc6382d5e6f770c08d0a192bcd"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0aeefafc6382d5e6f770c08d0a192bcd">risingColor</a></td></tr>
+<tr class="separator:a0aeefafc6382d5e6f770c08d0a192bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4aedd888315c0454046d3816f6566f" id="r_a0e4aedd888315c0454046d3816f6566f"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e4aedd888315c0454046d3816f6566f">peakColor</a></td></tr>
+<tr class="separator:a0e4aedd888315c0454046d3816f6566f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5517a4ebb43fc6cc47492f81b987a73" id="r_aa5517a4ebb43fc6cc47492f81b987a73"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5517a4ebb43fc6cc47492f81b987a73">fallingColor</a></td></tr>
+<tr class="separator:aa5517a4ebb43fc6cc47492f81b987a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd40dd3ee84ccda3dd8bcea2d5c6d064" id="r_abd40dd3ee84ccda3dd8bcea2d5c6d064"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd40dd3ee84ccda3dd8bcea2d5c6d064">groundColor</a></td></tr>
+<tr class="separator:abd40dd3ee84ccda3dd8bcea2d5c6d064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Movimiento de plataformas en 2D: andar, saltar (más alto cuanto más se mantiene W), saltos en el aire, gravedad distinta al subir, en lo alto y al caer, partículas y colores según el estado. Los valores salen de un <a class="el" href="classMovementStats.html" title="Valores de un tipo de movimiento (suelo, salto y aire). Es un ScriptableObject: hay un archivo por ca...">MovementStats</a>. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00011">11</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a9687a887cb7ae16793f2fdc42d00d11c" name="a9687a887cb7ae16793f2fdc42d00d11c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9687a887cb7ae16793f2fdc42d00d11c">&#9670;&#160;</a></span>FixedUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movement.FixedUpdate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aplica la física: acelera hasta la velocidad máxima del suelo o del aire, aplica el salto, la fricción y el límite de velocidad de caída. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00150">150</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a900c81fb712029854f384394a643c138" name="a900c81fb712029854f384394a643c138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a900c81fb712029854f384394a643c138">&#9670;&#160;</a></span>OnDrawGizmos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movement.OnDrawGizmos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dibuja en el editor el rayo que comprueba si toca el suelo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00215">215</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a5382914e6da64dbf89460062fdb4a08a" name="a5382914e6da64dbf89460062fdb4a08a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5382914e6da64dbf89460062fdb4a08a">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movement.Start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Guarda las referencias a los componentes y para las partículas de salto y de choque. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00053">53</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad9278ecc9daea58c9bc3737cc388e58f" name="ad9278ecc9daea58c9bc3737cc388e58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9278ecc9daea58c9bc3737cc388e58f">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movement.Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lee el teclado (A/D o flechas para moverse, W para saltar), comprueba con un <code>Raycast</code> si está en el suelo y cambia la gravedad y los colores según si sube, está en lo alto o cae. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00071">71</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a4bb0fb1d022923d6b09dfed9e02acbb6" name="a4bb0fb1d022923d6b09dfed9e02acbb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb0fb1d022923d6b09dfed9e02acbb6">&#9670;&#160;</a></span>UpdateStats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movement.UpdateStats </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMovementStats.html">MovementStats</a></td>          <td class="paramname"><span class="paramname"><em>newStats</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cambia los valores de movimiento por los de otro modo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newStats</td><td>Valores del modo nuevo.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00226">226</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de datos miembro</h2>
+<a id="a1dc8fbc800f31d08f23dd0d3eb1ed5e7" name="a1dc8fbc800f31d08f23dd0d3eb1ed5e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc8fbc800f31d08f23dd0d3eb1ed5e7">&#9670;&#160;</a></span>collisionParticles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParticleSystem Movement.collisionParticles</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00036">36</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="acb5351eb6e3c0804c79b87ee1aba6d5f" name="acb5351eb6e3c0804c79b87ee1aba6d5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb5351eb6e3c0804c79b87ee1aba6d5f">&#9670;&#160;</a></span>direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2 Movement.direction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00019">19</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa5517a4ebb43fc6cc47492f81b987a73" name="aa5517a4ebb43fc6cc47492f81b987a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5517a4ebb43fc6cc47492f81b987a73">&#9670;&#160;</a></span>fallingColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color Movement.fallingColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00045">45</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a9a020a539219fa250419348927d89a13" name="a9a020a539219fa250419348927d89a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a020a539219fa250419348927d89a13">&#9670;&#160;</a></span>groundCheckDistance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Movement.groundCheckDistance = 0.1f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00023">23</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a9ff13e4f4ba7da5acb189737a6986bcf" name="a9ff13e4f4ba7da5acb189737a6986bcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ff13e4f4ba7da5acb189737a6986bcf">&#9670;&#160;</a></span>groundCheckOrigin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform Movement.groundCheckOrigin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00024">24</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="abd40dd3ee84ccda3dd8bcea2d5c6d064" name="abd40dd3ee84ccda3dd8bcea2d5c6d064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd40dd3ee84ccda3dd8bcea2d5c6d064">&#9670;&#160;</a></span>groundColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color Movement.groundColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00046">46</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a46e58b115fde6eaa8e47ff82d2a28389" name="a46e58b115fde6eaa8e47ff82d2a28389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46e58b115fde6eaa8e47ff82d2a28389">&#9670;&#160;</a></span>groundedColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color Movement.groundedColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00042">42</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac5862498720850430d4099274c280091" name="ac5862498720850430d4099274c280091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5862498720850430d4099274c280091">&#9670;&#160;</a></span>groundLayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LayerMask Movement.groundLayer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00020">20</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a077039964c45c77e86b0698b6de84511" name="a077039964c45c77e86b0698b6de84511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077039964c45c77e86b0698b6de84511">&#9670;&#160;</a></span>isJumping</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Movement.isJumping = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00028">28</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="aab94058a26cb4a00f58809917dae07a6" name="aab94058a26cb4a00f58809917dae07a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab94058a26cb4a00f58809917dae07a6">&#9670;&#160;</a></span>isOnGround</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Movement.isOnGround = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00021">21</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a79846a25dbd40493d3a1d4828aecd4d3" name="a79846a25dbd40493d3a1d4828aecd4d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79846a25dbd40493d3a1d4828aecd4d3">&#9670;&#160;</a></span>jumpCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Movement.jumpCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Saltos dados en el aire desde que tocó el suelo por última vez. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00030">30</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="ace6e9ab6f48c944a117539227bdf05e0" name="ace6e9ab6f48c944a117539227bdf05e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6e9ab6f48c944a117539227bdf05e0">&#9670;&#160;</a></span>jumpParticles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParticleSystem Movement.jumpParticles</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00034">34</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="add5db38b0ed988ff05aa4a9a60b219db" name="add5db38b0ed988ff05aa4a9a60b219db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add5db38b0ed988ff05aa4a9a60b219db">&#9670;&#160;</a></span>mainModule</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParticleSystem.MainModule Movement.mainModule</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00038">38</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3696dc016a11bae0e5dc8ab625cb4ab8" name="a3696dc016a11bae0e5dc8ab625cb4ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3696dc016a11bae0e5dc8ab625cb4ab8">&#9670;&#160;</a></span>movementParticles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParticleSystem Movement.movementParticles</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00037">37</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a98d9c9dea47310f1e9167f86d143f362" name="a98d9c9dea47310f1e9167f86d143f362"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98d9c9dea47310f1e9167f86d143f362">&#9670;&#160;</a></span>noFriction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PhysicsMaterial2D Movement.noFriction</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00016">16</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a89c556d385190dd1b9a8b918df3b9007" name="a89c556d385190dd1b9a8b918df3b9007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c556d385190dd1b9a8b918df3b9007">&#9670;&#160;</a></span>noJumpParticles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParticleSystem Movement.noJumpParticles</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00035">35</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a235501570fdea3cf1a858ac1af010db9" name="a235501570fdea3cf1a858ac1af010db9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a235501570fdea3cf1a858ac1af010db9">&#9670;&#160;</a></span>onAirColors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gradient Movement.onAirColors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00041">41</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0e4aedd888315c0454046d3816f6566f" name="a0e4aedd888315c0454046d3816f6566f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e4aedd888315c0454046d3816f6566f">&#9670;&#160;</a></span>peakColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color Movement.peakColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00044">44</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1dc716ffe71e1606b7c0d8fd80b73958" name="a1dc716ffe71e1606b7c0d8fd80b73958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc716ffe71e1606b7c0d8fd80b73958">&#9670;&#160;</a></span>pressTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Movement.pressTime = 0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00027">27</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0be9677f9227803bc466665501d7a1d5" name="a0be9677f9227803bc466665501d7a1d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be9677f9227803bc466665501d7a1d5">&#9670;&#160;</a></span>rb</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rigidbody2D Movement.rb</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00014">14</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0aeefafc6382d5e6f770c08d0a192bcd" name="a0aeefafc6382d5e6f770c08d0a192bcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aeefafc6382d5e6f770c08d0a192bcd">&#9670;&#160;</a></span>risingColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color Movement.risingColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00043">43</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad1b6c28feaef8796ce0564b4adfc9ca5" name="ad1b6c28feaef8796ce0564b4adfc9ca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1b6c28feaef8796ce0564b4adfc9ca5">&#9670;&#160;</a></span>spriteRenderer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SpriteRenderer Movement.spriteRenderer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00033">33</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a5bc5e24a6b5ad176d2ac3bd7dd7dcff6" name="a5bc5e24a6b5ad176d2ac3bd7dd7dcff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">&#9670;&#160;</a></span>stats</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMovementStats.html">MovementStats</a> Movement.stats</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00015">15</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<a id="af9215338c4b90587c18157c1ccdf07d6" name="af9215338c4b90587c18157c1ccdf07d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9215338c4b90587c18157c1ccdf07d6">&#9670;&#160;</a></span>wasOnGroundPreviousFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Movement.wasOnGroundPreviousFrame = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movement_8cs_source.html#l00022">22</a> del archivo <a class="el" href="Movement_8cs_source.html">Movement.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li><a class="el" href="Movement_8cs_source.html">Movement.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMovement.html">Movement</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

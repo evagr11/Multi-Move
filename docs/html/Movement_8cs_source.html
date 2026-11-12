@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Multi-Move: Archivo de código fuente Movement.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Multi-Move
+   </div>
+   <div id="projectbrief">Movimiento de plataformas 2D con varios modos de salto que se cambian con la tecla M.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('Movement_8cs_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Movement.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Movement_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>Unity.VisualScripting.Antlr3.Runtime.Misc;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>static UnityEngine.ParticleSystem;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classMovement.html">   11</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classMovement.html">Movement</a> : MonoBehaviour</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    [Header(<span class="stringliteral">&quot;Components&quot;</span>)]</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">   14</a></span>    <span class="keyword">public</span> Rigidbody2D <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">   15</a></span>    [SerializeField] <span class="keyword">private</span> <a class="code hl_class" href="classMovementStats.html">MovementStats</a> <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classMovement.html#a98d9c9dea47310f1e9167f86d143f362">   16</a></span>    <span class="keyword">public</span> PhysicsMaterial2D <a class="code hl_variable" href="classMovement.html#a98d9c9dea47310f1e9167f86d143f362">noFriction</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    [Header(<span class="stringliteral">&quot;Ground Check&quot;</span>)]</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classMovement.html#acb5351eb6e3c0804c79b87ee1aba6d5f">   19</a></span>    <span class="keyword">private</span> Vector2 <a class="code hl_variable" href="classMovement.html#acb5351eb6e3c0804c79b87ee1aba6d5f">direction</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classMovement.html#ac5862498720850430d4099274c280091">   20</a></span>    [SerializeField] <span class="keyword">private</span> LayerMask <a class="code hl_variable" href="classMovement.html#ac5862498720850430d4099274c280091">groundLayer</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">   21</a></span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">isOnGround</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classMovement.html#af9215338c4b90587c18157c1ccdf07d6">   22</a></span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classMovement.html#af9215338c4b90587c18157c1ccdf07d6">wasOnGroundPreviousFrame</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classMovement.html#a9a020a539219fa250419348927d89a13">   23</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="classMovement.html#a9a020a539219fa250419348927d89a13">groundCheckDistance</a> = 0.1f;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classMovement.html#a9ff13e4f4ba7da5acb189737a6986bcf">   24</a></span>    [SerializeField] <span class="keyword">private</span> Transform <a class="code hl_variable" href="classMovement.html#a9ff13e4f4ba7da5acb189737a6986bcf">groundCheckOrigin</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    [Header(<span class="stringliteral">&quot;Jump Execution&quot;</span>)]</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classMovement.html#a1dc716ffe71e1606b7c0d8fd80b73958">   27</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="classMovement.html#a1dc716ffe71e1606b7c0d8fd80b73958">pressTime</a> = 0f;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classMovement.html#a077039964c45c77e86b0698b6de84511">   28</a></span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classMovement.html#a077039964c45c77e86b0698b6de84511">isJumping</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classMovement.html#a79846a25dbd40493d3a1d4828aecd4d3">   30</a></span>    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="classMovement.html#a79846a25dbd40493d3a1d4828aecd4d3">jumpCount</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    [Header(<span class="stringliteral">&quot;Particles&quot;</span>)]</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classMovement.html#ad1b6c28feaef8796ce0564b4adfc9ca5">   33</a></span>    <span class="keyword">public</span> SpriteRenderer <a class="code hl_variable" href="classMovement.html#ad1b6c28feaef8796ce0564b4adfc9ca5">spriteRenderer</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classMovement.html#ace6e9ab6f48c944a117539227bdf05e0">   34</a></span>    <span class="keyword">public</span> ParticleSystem <a class="code hl_variable" href="classMovement.html#ace6e9ab6f48c944a117539227bdf05e0">jumpParticles</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classMovement.html#a89c556d385190dd1b9a8b918df3b9007">   35</a></span>    <span class="keyword">public</span> ParticleSystem <a class="code hl_variable" href="classMovement.html#a89c556d385190dd1b9a8b918df3b9007">noJumpParticles</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classMovement.html#a1dc8fbc800f31d08f23dd0d3eb1ed5e7">   36</a></span>    <span class="keyword">public</span> ParticleSystem <a class="code hl_variable" href="classMovement.html#a1dc8fbc800f31d08f23dd0d3eb1ed5e7">collisionParticles</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classMovement.html#a3696dc016a11bae0e5dc8ab625cb4ab8">   37</a></span>    <span class="keyword">public</span> ParticleSystem <a class="code hl_variable" href="classMovement.html#a3696dc016a11bae0e5dc8ab625cb4ab8">movementParticles</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classMovement.html#add5db38b0ed988ff05aa4a9a60b219db">   38</a></span>    <span class="keyword">public</span> ParticleSystem.MainModule <a class="code hl_variable" href="classMovement.html#add5db38b0ed988ff05aa4a9a60b219db">mainModule</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    [Header(<span class="stringliteral">&quot;Colors&quot;</span>)]</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classMovement.html#a235501570fdea3cf1a858ac1af010db9">   41</a></span>    [SerializeField] <span class="keyword">private</span> Gradient <a class="code hl_variable" href="classMovement.html#a235501570fdea3cf1a858ac1af010db9">onAirColors</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classMovement.html#a46e58b115fde6eaa8e47ff82d2a28389">   42</a></span>    [SerializeField] <span class="keyword">private</span> Color <a class="code hl_variable" href="classMovement.html#a46e58b115fde6eaa8e47ff82d2a28389">groundedColor</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classMovement.html#a0aeefafc6382d5e6f770c08d0a192bcd">   43</a></span>    [SerializeField] <span class="keyword">private</span> Color <a class="code hl_variable" href="classMovement.html#a0aeefafc6382d5e6f770c08d0a192bcd">risingColor</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classMovement.html#a0e4aedd888315c0454046d3816f6566f">   44</a></span>    [SerializeField] <span class="keyword">private</span> Color <a class="code hl_variable" href="classMovement.html#a0e4aedd888315c0454046d3816f6566f">peakColor</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classMovement.html#aa5517a4ebb43fc6cc47492f81b987a73">   45</a></span>    [SerializeField] <span class="keyword">private</span> Color <a class="code hl_variable" href="classMovement.html#aa5517a4ebb43fc6cc47492f81b987a73">fallingColor</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classMovement.html#abd40dd3ee84ccda3dd8bcea2d5c6d064">   46</a></span>    [SerializeField] <span class="keyword">private</span> Color <a class="code hl_variable" href="classMovement.html#abd40dd3ee84ccda3dd8bcea2d5c6d064">groundColor</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// Start is called before the first frame update</span></div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classMovement.html#a5382914e6da64dbf89460062fdb4a08a">   53</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMovement.html#a5382914e6da64dbf89460062fdb4a08a">Start</a>()</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <a class="code hl_variable" href="classMovement.html#ad1b6c28feaef8796ce0564b4adfc9ca5">spriteRenderer</a> = GetComponent&lt;SpriteRenderer&gt;();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a> = GetComponent&lt;Rigidbody2D&gt;();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_variable" href="classMovement.html#a98d9c9dea47310f1e9167f86d143f362">noFriction</a> = GetComponent&lt;PhysicsMaterial2D&gt;();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_variable" href="classMovement.html#add5db38b0ed988ff05aa4a9a60b219db">mainModule</a> = <a class="code hl_variable" href="classMovement.html#a3696dc016a11bae0e5dc8ab625cb4ab8">movementParticles</a>.main;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_variable" href="classMovement.html#ace6e9ab6f48c944a117539227bdf05e0">jumpParticles</a>.Stop();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_variable" href="classMovement.html#a89c556d385190dd1b9a8b918df3b9007">noJumpParticles</a>.Stop();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_variable" href="classMovement.html#a1dc8fbc800f31d08f23dd0d3eb1ed5e7">collisionParticles</a>.Stop();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// Update is called once per frame</span></div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classMovement.html#ad9278ecc9daea58c9bc3737cc388e58f">   71</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMovement.html#ad9278ecc9daea58c9bc3737cc388e58f">Update</a>()</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_variable" href="classMovement.html#acb5351eb6e3c0804c79b87ee1aba6d5f">direction</a> = Vector2.zero;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">if</span> (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <a class="code hl_variable" href="classMovement.html#acb5351eb6e3c0804c79b87ee1aba6d5f">direction</a> += Vector2.right;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">if</span> (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_variable" href="classMovement.html#acb5351eb6e3c0804c79b87ee1aba6d5f">direction</a> += Vector2.left;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_variable" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">isOnGround</a> = Physics2D.Raycast(<a class="code hl_variable" href="classMovement.html#a9ff13e4f4ba7da5acb189737a6986bcf">groundCheckOrigin</a>.position, Vector2.down, <a class="code hl_variable" href="classMovement.html#a9a020a539219fa250419348927d89a13">groundCheckDistance</a>, <a class="code hl_variable" href="classMovement.html#ac5862498720850430d4099274c280091">groundLayer</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classMovement.html#af9215338c4b90587c18157c1ccdf07d6">wasOnGroundPreviousFrame</a> &amp;&amp; <a class="code hl_variable" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">isOnGround</a>)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <a class="code hl_variable" href="classMovement.html#a1dc8fbc800f31d08f23dd0d3eb1ed5e7">collisionParticles</a>.Play();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">isOnGround</a>)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            spriteRenderer.color = <a class="code hl_variable" href="classMovement.html#a46e58b115fde6eaa8e47ff82d2a28389">groundedColor</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            mainModule.startColor = <a class="code hl_variable" href="classMovement.html#abd40dd3ee84ccda3dd8bcea2d5c6d064">groundColor</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">if</span> (Input.GetKeyDown(KeyCode.W))</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">isOnGround</a> || <a class="code hl_variable" href="classMovement.html#a79846a25dbd40493d3a1d4828aecd4d3">jumpCount</a> &lt;= <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad1e0fcab15b2a8a8826ad87fe9e3f41d">onAirJumps</a>)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">isOnGround</a>)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                    <a class="code hl_variable" href="classMovement.html#a79846a25dbd40493d3a1d4828aecd4d3">jumpCount</a> = 0;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                    <a class="code hl_variable" href="classMovement.html#a79846a25dbd40493d3a1d4828aecd4d3">jumpCount</a>++;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                spriteRenderer.color = <a class="code hl_variable" href="classMovement.html#a235501570fdea3cf1a858ac1af010db9">onAirColors</a>.Evaluate(<a class="code hl_variable" href="classMovement.html#a79846a25dbd40493d3a1d4828aecd4d3">jumpCount</a> / <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad1e0fcab15b2a8a8826ad87fe9e3f41d">onAirJumps</a>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <a class="code hl_variable" href="classMovement.html#ace6e9ab6f48c944a117539227bdf05e0">jumpParticles</a>.Play();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <a class="code hl_variable" href="classMovement.html#a89c556d385190dd1b9a8b918df3b9007">noJumpParticles</a>.Play();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">if</span> (Input.GetKey(KeyCode.W) &amp;&amp; <a class="code hl_variable" href="classMovement.html#a1dc716ffe71e1606b7c0d8fd80b73958">pressTime</a> &lt; <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a33a82990c52059340e93905ec7504bbe">maxJumpTime</a> &amp;&amp; <a class="code hl_variable" href="classMovement.html#a79846a25dbd40493d3a1d4828aecd4d3">jumpCount</a> &lt;= <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad1e0fcab15b2a8a8826ad87fe9e3f41d">onAirJumps</a>)</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <a class="code hl_variable" href="classMovement.html#a1dc716ffe71e1606b7c0d8fd80b73958">pressTime</a> += Time.deltaTime;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <a class="code hl_variable" href="classMovement.html#a077039964c45c77e86b0698b6de84511">isJumping</a> = <span class="keyword">true</span>; </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">if</span> (Input.GetKeyUp(KeyCode.W))</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <a class="code hl_variable" href="classMovement.html#a1dc716ffe71e1606b7c0d8fd80b73958">pressTime</a> = 0;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y &gt; <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a0380f81ca40505e1d849c5c2c5c54a32">yVelocityLowGravityThreshold</a>)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            mainModule.startColor = <a class="code hl_variable" href="classMovement.html#a0aeefafc6382d5e6f770c08d0a192bcd">risingColor</a>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            rb.gravityScale = <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ac2012af0b8bd91ee2dec56446130a2e1">risingtGravity</a>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y &lt; -<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a0380f81ca40505e1d849c5c2c5c54a32">yVelocityLowGravityThreshold</a>)</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            mainModule.startColor = <a class="code hl_variable" href="classMovement.html#aa5517a4ebb43fc6cc47492f81b987a73">fallingColor</a>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            rb.gravityScale = <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a6a1a3f7402f8c69400c86130749f668b">fallingGravity</a>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a0380f81ca40505e1d849c5c2c5c54a32">yVelocityLowGravityThreshold</a> &gt; <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y &amp;&amp; <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y &gt; -<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a0380f81ca40505e1d849c5c2c5c54a32">yVelocityLowGravityThreshold</a> &amp;&amp; !<a class="code hl_variable" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">isOnGround</a>)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            mainModule.startColor = <a class="code hl_variable" href="classMovement.html#a0e4aedd888315c0454046d3816f6566f">peakColor</a>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            rb.gravityScale = <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ada78053c7e693e088773e8c65257b8b1">peakGravity</a>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_variable" href="classMovement.html#af9215338c4b90587c18157c1ccdf07d6">wasOnGroundPreviousFrame</a> = <a class="code hl_variable" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">isOnGround</a>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classMovement.html#a9687a887cb7ae16793f2fdc42d00d11c">  150</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMovement.html#a9687a887cb7ae16793f2fdc42d00d11c">FixedUpdate</a>()</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">isOnGround</a>)</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="comment">// Si la velocidad horizontal está dentro del límite, aumenta la velocidad con la aceleración del suelo</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &lt; <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#aee6956592b599941a9193ef1bc71d3e3">maxGroundHorizontalSpeed</a> &amp;&amp; <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &gt; -<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#aee6956592b599941a9193ef1bc71d3e3">maxGroundHorizontalSpeed</a>)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                rb.velocity = <span class="keyword">new</span> Vector2(<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x + (<a class="code hl_variable" href="classMovement.html#acb5351eb6e3c0804c79b87ee1aba6d5f">direction</a>.x * <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a5a52a0ff59eaecf9fd285917abb11ad6">groundAcceleration</a> * Time.deltaTime), <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                <span class="comment">// Si supera la velocidad máxima, se restringe al máximo permitido</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &gt; <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#aee6956592b599941a9193ef1bc71d3e3">maxGroundHorizontalSpeed</a>)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                    rb.velocity = <span class="keyword">new</span> Vector2(<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#aee6956592b599941a9193ef1bc71d3e3">maxGroundHorizontalSpeed</a>, <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &lt; -<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#aee6956592b599941a9193ef1bc71d3e3">maxGroundHorizontalSpeed</a>)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                    rb.velocity = <span class="keyword">new</span> Vector2(-<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#aee6956592b599941a9193ef1bc71d3e3">maxGroundHorizontalSpeed</a>, <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="comment">// Si la velocidad horizontal está dentro del límite, aplica la aceleración para moverse en el aire</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &lt; <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad33d52816c44c7cdd6b80a29ed40fb65">maxAirHorizontalSpeed</a> &amp;&amp; <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &gt; -<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad33d52816c44c7cdd6b80a29ed40fb65">maxAirHorizontalSpeed</a>)</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                rb.velocity = <span class="keyword">new</span> Vector2(<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x + (<a class="code hl_variable" href="classMovement.html#acb5351eb6e3c0804c79b87ee1aba6d5f">direction</a>.x * <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a36eaad3a4ba7b1a4705ffc19b37d015b">airAcceleration</a> * Time.deltaTime), <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                <span class="comment">// Si la velocidad supera el máximo, se restringe</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &gt; <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad33d52816c44c7cdd6b80a29ed40fb65">maxAirHorizontalSpeed</a>)</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    rb.velocity = <span class="keyword">new</span> Vector2(<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad33d52816c44c7cdd6b80a29ed40fb65">maxAirHorizontalSpeed</a>, <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &lt; -<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad33d52816c44c7cdd6b80a29ed40fb65">maxAirHorizontalSpeed</a>)</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                    rb.velocity = <span class="keyword">new</span> Vector2(-<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad33d52816c44c7cdd6b80a29ed40fb65">maxAirHorizontalSpeed</a>, <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a077039964c45c77e86b0698b6de84511">isJumping</a>)</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            rb.velocity = <span class="keyword">new</span> Vector2(<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x, <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a9188047a28dff723cc19a3a0d72de80a">jumpStrength</a>);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            <a class="code hl_variable" href="classMovement.html#a077039964c45c77e86b0698b6de84511">isJumping</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">isOnGround</a>)</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <span class="comment">// Si el personaje se mueve a la derecha, reduce la velocidad aplicando la fricción del suelo</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &gt; 0)</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                rb.velocity = <span class="keyword">new</span> Vector2(<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x - <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ae652581611550cd49d70f0a4a5064c24">groundHorizontalFriction</a> * Time.deltaTime, <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            <span class="comment">// Idem para la izquierda</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &lt; 0)</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                rb.velocity = <span class="keyword">new</span> Vector2(<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x + <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ae652581611550cd49d70f0a4a5064c24">groundHorizontalFriction</a> * Time.deltaTime, <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keywordflow">else</span> <span class="comment">//mismo mecanismo para cuando esta en el aire</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &gt; 0)</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                rb.velocity = <span class="keyword">new</span> Vector2(<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x - <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a04d4097befb965c35477ed82f950c73e">airFriccion</a> * Time.deltaTime, <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x &lt; 0)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                rb.velocity = <span class="keyword">new</span> Vector2(<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x + <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#a04d4097befb965c35477ed82f950c73e">airFriccion</a> * Time.deltaTime, <a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.y &lt; -<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad973c083a76377c444202deaffdb922a">maxFallSpeed</a>)</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            rb.velocity = <span class="keyword">new</span> Vector2(<a class="code hl_variable" href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">rb</a>.velocity.x, -<a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a>.<a class="code hl_variable" href="classMovementStats.html#ad973c083a76377c444202deaffdb922a">maxFallSpeed</a>);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    }</div>
+</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classMovement.html#a900c81fb712029854f384394a643c138">  215</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classMovement.html#a900c81fb712029854f384394a643c138">OnDrawGizmos</a>()</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        Gizmos.color = Color.red;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        Gizmos.DrawWireSphere(<a class="code hl_variable" href="classMovement.html#a9ff13e4f4ba7da5acb189737a6986bcf">groundCheckOrigin</a>.position, 0.01f);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        Gizmos.DrawLine(<a class="code hl_variable" href="classMovement.html#a9ff13e4f4ba7da5acb189737a6986bcf">groundCheckOrigin</a>.position, <a class="code hl_variable" href="classMovement.html#a9ff13e4f4ba7da5acb189737a6986bcf">groundCheckOrigin</a>.position + Vector3.down * <a class="code hl_variable" href="classMovement.html#a9a020a539219fa250419348927d89a13">groundCheckDistance</a>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    }</div>
+</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="classMovement.html#a4bb0fb1d022923d6b09dfed9e02acbb6">  226</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classMovement.html#a4bb0fb1d022923d6b09dfed9e02acbb6">UpdateStats</a>(<a class="code hl_class" href="classMovementStats.html">MovementStats</a> newStats)</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <a class="code hl_variable" href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">stats</a> = newStats;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    }</div>
+</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>}</div>
+</div>
+<div class="ttc" id="aclassMovementStats_html"><div class="ttname"><a href="classMovementStats.html">MovementStats</a></div><div class="ttdoc">Valores de un tipo de movimiento (suelo, salto y aire). Es un ScriptableObject: hay un archivo por ca...</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00013">MovementStats.cs:14</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_a0380f81ca40505e1d849c5c2c5c54a32"><div class="ttname"><a href="classMovementStats.html#a0380f81ca40505e1d849c5c2c5c54a32">MovementStats.yVelocityLowGravityThreshold</a></div><div class="ttdeci">float yVelocityLowGravityThreshold</div><div class="ttdoc">Velocidad vertical por debajo de la cual se considera que está en lo alto del salto.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00036">MovementStats.cs:36</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_a04d4097befb965c35477ed82f950c73e"><div class="ttname"><a href="classMovementStats.html#a04d4097befb965c35477ed82f950c73e">MovementStats.airFriccion</a></div><div class="ttdeci">float airFriccion</div><div class="ttdoc">Fricción que frena al personaje en el aire.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00040">MovementStats.cs:40</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_a33a82990c52059340e93905ec7504bbe"><div class="ttname"><a href="classMovementStats.html#a33a82990c52059340e93905ec7504bbe">MovementStats.maxJumpTime</a></div><div class="ttdeci">float maxJumpTime</div><div class="ttdoc">Tiempo máximo, en segundos, que se puede mantener W para saltar más alto.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00028">MovementStats.cs:28</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_a36eaad3a4ba7b1a4705ffc19b37d015b"><div class="ttname"><a href="classMovementStats.html#a36eaad3a4ba7b1a4705ffc19b37d015b">MovementStats.airAcceleration</a></div><div class="ttdeci">float airAcceleration</div><div class="ttdoc">Aceleración horizontal en el aire.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00031">MovementStats.cs:31</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_a5a52a0ff59eaecf9fd285917abb11ad6"><div class="ttname"><a href="classMovementStats.html#a5a52a0ff59eaecf9fd285917abb11ad6">MovementStats.groundAcceleration</a></div><div class="ttdeci">float groundAcceleration</div><div class="ttdoc">Aceleración horizontal en el suelo.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00017">MovementStats.cs:17</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_a6a1a3f7402f8c69400c86130749f668b"><div class="ttname"><a href="classMovementStats.html#a6a1a3f7402f8c69400c86130749f668b">MovementStats.fallingGravity</a></div><div class="ttdeci">float fallingGravity</div><div class="ttdoc">Gravedad mientras cae.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00046">MovementStats.cs:46</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_a9188047a28dff723cc19a3a0d72de80a"><div class="ttname"><a href="classMovementStats.html#a9188047a28dff723cc19a3a0d72de80a">MovementStats.jumpStrength</a></div><div class="ttdeci">float jumpStrength</div><div class="ttdoc">Velocidad vertical que se aplica al saltar.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00026">MovementStats.cs:26</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_ac2012af0b8bd91ee2dec56446130a2e1"><div class="ttname"><a href="classMovementStats.html#ac2012af0b8bd91ee2dec56446130a2e1">MovementStats.risingtGravity</a></div><div class="ttdeci">float risingtGravity</div><div class="ttdoc">Gravedad mientras sube.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00042">MovementStats.cs:42</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_ad1e0fcab15b2a8a8826ad87fe9e3f41d"><div class="ttname"><a href="classMovementStats.html#ad1e0fcab15b2a8a8826ad87fe9e3f41d">MovementStats.onAirJumps</a></div><div class="ttdeci">float onAirJumps</div><div class="ttdoc">Saltos extra que se pueden dar en el aire.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00024">MovementStats.cs:24</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_ad33d52816c44c7cdd6b80a29ed40fb65"><div class="ttname"><a href="classMovementStats.html#ad33d52816c44c7cdd6b80a29ed40fb65">MovementStats.maxAirHorizontalSpeed</a></div><div class="ttdeci">float maxAirHorizontalSpeed</div><div class="ttdoc">Velocidad horizontal máxima en el aire.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00033">MovementStats.cs:33</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_ad973c083a76377c444202deaffdb922a"><div class="ttname"><a href="classMovementStats.html#ad973c083a76377c444202deaffdb922a">MovementStats.maxFallSpeed</a></div><div class="ttdeci">float maxFallSpeed</div><div class="ttdoc">Velocidad máxima de caída.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00038">MovementStats.cs:38</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_ada78053c7e693e088773e8c65257b8b1"><div class="ttname"><a href="classMovementStats.html#ada78053c7e693e088773e8c65257b8b1">MovementStats.peakGravity</a></div><div class="ttdeci">float peakGravity</div><div class="ttdoc">Gravedad en lo alto del salto.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00044">MovementStats.cs:44</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_ae652581611550cd49d70f0a4a5064c24"><div class="ttname"><a href="classMovementStats.html#ae652581611550cd49d70f0a4a5064c24">MovementStats.groundHorizontalFriction</a></div><div class="ttdeci">float groundHorizontalFriction</div><div class="ttdoc">Fricción que frena al personaje en el suelo.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00021">MovementStats.cs:21</a></div></div>
+<div class="ttc" id="aclassMovementStats_html_aee6956592b599941a9193ef1bc71d3e3"><div class="ttname"><a href="classMovementStats.html#aee6956592b599941a9193ef1bc71d3e3">MovementStats.maxGroundHorizontalSpeed</a></div><div class="ttdeci">float maxGroundHorizontalSpeed</div><div class="ttdoc">Velocidad horizontal máxima en el suelo.</div><div class="ttdef"><b>Definition</b> <a href="MovementStats_8cs_source.html#l00019">MovementStats.cs:19</a></div></div>
+<div class="ttc" id="aclassMovement_html"><div class="ttname"><a href="classMovement.html">Movement</a></div><div class="ttdoc">Movimiento de plataformas en 2D: andar, saltar (más alto cuanto más se mantiene W),...</div><div class="ttdef"><b>Definition</b> <a href="#l00011">Movement.cs:12</a></div></div>
+<div class="ttc" id="aclassMovement_html_a077039964c45c77e86b0698b6de84511"><div class="ttname"><a href="classMovement.html#a077039964c45c77e86b0698b6de84511">Movement.isJumping</a></div><div class="ttdeci">bool isJumping</div><div class="ttdef"><b>Definition</b> <a href="#l00028">Movement.cs:28</a></div></div>
+<div class="ttc" id="aclassMovement_html_a0aeefafc6382d5e6f770c08d0a192bcd"><div class="ttname"><a href="classMovement.html#a0aeefafc6382d5e6f770c08d0a192bcd">Movement.risingColor</a></div><div class="ttdeci">Color risingColor</div><div class="ttdef"><b>Definition</b> <a href="#l00043">Movement.cs:43</a></div></div>
+<div class="ttc" id="aclassMovement_html_a0be9677f9227803bc466665501d7a1d5"><div class="ttname"><a href="classMovement.html#a0be9677f9227803bc466665501d7a1d5">Movement.rb</a></div><div class="ttdeci">Rigidbody2D rb</div><div class="ttdef"><b>Definition</b> <a href="#l00014">Movement.cs:14</a></div></div>
+<div class="ttc" id="aclassMovement_html_a0e4aedd888315c0454046d3816f6566f"><div class="ttname"><a href="classMovement.html#a0e4aedd888315c0454046d3816f6566f">Movement.peakColor</a></div><div class="ttdeci">Color peakColor</div><div class="ttdef"><b>Definition</b> <a href="#l00044">Movement.cs:44</a></div></div>
+<div class="ttc" id="aclassMovement_html_a1dc716ffe71e1606b7c0d8fd80b73958"><div class="ttname"><a href="classMovement.html#a1dc716ffe71e1606b7c0d8fd80b73958">Movement.pressTime</a></div><div class="ttdeci">float pressTime</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Movement.cs:27</a></div></div>
+<div class="ttc" id="aclassMovement_html_a1dc8fbc800f31d08f23dd0d3eb1ed5e7"><div class="ttname"><a href="classMovement.html#a1dc8fbc800f31d08f23dd0d3eb1ed5e7">Movement.collisionParticles</a></div><div class="ttdeci">ParticleSystem collisionParticles</div><div class="ttdef"><b>Definition</b> <a href="#l00036">Movement.cs:36</a></div></div>
+<div class="ttc" id="aclassMovement_html_a235501570fdea3cf1a858ac1af010db9"><div class="ttname"><a href="classMovement.html#a235501570fdea3cf1a858ac1af010db9">Movement.onAirColors</a></div><div class="ttdeci">Gradient onAirColors</div><div class="ttdef"><b>Definition</b> <a href="#l00041">Movement.cs:41</a></div></div>
+<div class="ttc" id="aclassMovement_html_a3696dc016a11bae0e5dc8ab625cb4ab8"><div class="ttname"><a href="classMovement.html#a3696dc016a11bae0e5dc8ab625cb4ab8">Movement.movementParticles</a></div><div class="ttdeci">ParticleSystem movementParticles</div><div class="ttdef"><b>Definition</b> <a href="#l00037">Movement.cs:37</a></div></div>
+<div class="ttc" id="aclassMovement_html_a46e58b115fde6eaa8e47ff82d2a28389"><div class="ttname"><a href="classMovement.html#a46e58b115fde6eaa8e47ff82d2a28389">Movement.groundedColor</a></div><div class="ttdeci">Color groundedColor</div><div class="ttdef"><b>Definition</b> <a href="#l00042">Movement.cs:42</a></div></div>
+<div class="ttc" id="aclassMovement_html_a4bb0fb1d022923d6b09dfed9e02acbb6"><div class="ttname"><a href="classMovement.html#a4bb0fb1d022923d6b09dfed9e02acbb6">Movement.UpdateStats</a></div><div class="ttdeci">void UpdateStats(MovementStats newStats)</div><div class="ttdoc">Cambia los valores de movimiento por los de otro modo.</div><div class="ttdef"><b>Definition</b> <a href="#l00226">Movement.cs:226</a></div></div>
+<div class="ttc" id="aclassMovement_html_a5382914e6da64dbf89460062fdb4a08a"><div class="ttname"><a href="classMovement.html#a5382914e6da64dbf89460062fdb4a08a">Movement.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Guarda las referencias a los componentes y para las partículas de salto y de choque.</div><div class="ttdef"><b>Definition</b> <a href="#l00053">Movement.cs:53</a></div></div>
+<div class="ttc" id="aclassMovement_html_a5bc5e24a6b5ad176d2ac3bd7dd7dcff6"><div class="ttname"><a href="classMovement.html#a5bc5e24a6b5ad176d2ac3bd7dd7dcff6">Movement.stats</a></div><div class="ttdeci">MovementStats stats</div><div class="ttdef"><b>Definition</b> <a href="#l00015">Movement.cs:15</a></div></div>
+<div class="ttc" id="aclassMovement_html_a79846a25dbd40493d3a1d4828aecd4d3"><div class="ttname"><a href="classMovement.html#a79846a25dbd40493d3a1d4828aecd4d3">Movement.jumpCount</a></div><div class="ttdeci">float jumpCount</div><div class="ttdoc">Saltos dados en el aire desde que tocó el suelo por última vez.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">Movement.cs:30</a></div></div>
+<div class="ttc" id="aclassMovement_html_a89c556d385190dd1b9a8b918df3b9007"><div class="ttname"><a href="classMovement.html#a89c556d385190dd1b9a8b918df3b9007">Movement.noJumpParticles</a></div><div class="ttdeci">ParticleSystem noJumpParticles</div><div class="ttdef"><b>Definition</b> <a href="#l00035">Movement.cs:35</a></div></div>
+<div class="ttc" id="aclassMovement_html_a900c81fb712029854f384394a643c138"><div class="ttname"><a href="classMovement.html#a900c81fb712029854f384394a643c138">Movement.OnDrawGizmos</a></div><div class="ttdeci">void OnDrawGizmos()</div><div class="ttdoc">Dibuja en el editor el rayo que comprueba si toca el suelo.</div><div class="ttdef"><b>Definition</b> <a href="#l00215">Movement.cs:215</a></div></div>
+<div class="ttc" id="aclassMovement_html_a9687a887cb7ae16793f2fdc42d00d11c"><div class="ttname"><a href="classMovement.html#a9687a887cb7ae16793f2fdc42d00d11c">Movement.FixedUpdate</a></div><div class="ttdeci">void FixedUpdate()</div><div class="ttdoc">Aplica la física: acelera hasta la velocidad máxima del suelo o del aire, aplica el salto,...</div><div class="ttdef"><b>Definition</b> <a href="#l00150">Movement.cs:150</a></div></div>
+<div class="ttc" id="aclassMovement_html_a98d9c9dea47310f1e9167f86d143f362"><div class="ttname"><a href="classMovement.html#a98d9c9dea47310f1e9167f86d143f362">Movement.noFriction</a></div><div class="ttdeci">PhysicsMaterial2D noFriction</div><div class="ttdef"><b>Definition</b> <a href="#l00016">Movement.cs:16</a></div></div>
+<div class="ttc" id="aclassMovement_html_a9a020a539219fa250419348927d89a13"><div class="ttname"><a href="classMovement.html#a9a020a539219fa250419348927d89a13">Movement.groundCheckDistance</a></div><div class="ttdeci">float groundCheckDistance</div><div class="ttdef"><b>Definition</b> <a href="#l00023">Movement.cs:23</a></div></div>
+<div class="ttc" id="aclassMovement_html_a9ff13e4f4ba7da5acb189737a6986bcf"><div class="ttname"><a href="classMovement.html#a9ff13e4f4ba7da5acb189737a6986bcf">Movement.groundCheckOrigin</a></div><div class="ttdeci">Transform groundCheckOrigin</div><div class="ttdef"><b>Definition</b> <a href="#l00024">Movement.cs:24</a></div></div>
+<div class="ttc" id="aclassMovement_html_aa5517a4ebb43fc6cc47492f81b987a73"><div class="ttname"><a href="classMovement.html#aa5517a4ebb43fc6cc47492f81b987a73">Movement.fallingColor</a></div><div class="ttdeci">Color fallingColor</div><div class="ttdef"><b>Definition</b> <a href="#l00045">Movement.cs:45</a></div></div>
+<div class="ttc" id="aclassMovement_html_aab94058a26cb4a00f58809917dae07a6"><div class="ttname"><a href="classMovement.html#aab94058a26cb4a00f58809917dae07a6">Movement.isOnGround</a></div><div class="ttdeci">bool isOnGround</div><div class="ttdef"><b>Definition</b> <a href="#l00021">Movement.cs:21</a></div></div>
+<div class="ttc" id="aclassMovement_html_abd40dd3ee84ccda3dd8bcea2d5c6d064"><div class="ttname"><a href="classMovement.html#abd40dd3ee84ccda3dd8bcea2d5c6d064">Movement.groundColor</a></div><div class="ttdeci">Color groundColor</div><div class="ttdef"><b>Definition</b> <a href="#l00046">Movement.cs:46</a></div></div>
+<div class="ttc" id="aclassMovement_html_ac5862498720850430d4099274c280091"><div class="ttname"><a href="classMovement.html#ac5862498720850430d4099274c280091">Movement.groundLayer</a></div><div class="ttdeci">LayerMask groundLayer</div><div class="ttdef"><b>Definition</b> <a href="#l00020">Movement.cs:20</a></div></div>
+<div class="ttc" id="aclassMovement_html_acb5351eb6e3c0804c79b87ee1aba6d5f"><div class="ttname"><a href="classMovement.html#acb5351eb6e3c0804c79b87ee1aba6d5f">Movement.direction</a></div><div class="ttdeci">Vector2 direction</div><div class="ttdef"><b>Definition</b> <a href="#l00019">Movement.cs:19</a></div></div>
+<div class="ttc" id="aclassMovement_html_ace6e9ab6f48c944a117539227bdf05e0"><div class="ttname"><a href="classMovement.html#ace6e9ab6f48c944a117539227bdf05e0">Movement.jumpParticles</a></div><div class="ttdeci">ParticleSystem jumpParticles</div><div class="ttdef"><b>Definition</b> <a href="#l00034">Movement.cs:34</a></div></div>
+<div class="ttc" id="aclassMovement_html_ad1b6c28feaef8796ce0564b4adfc9ca5"><div class="ttname"><a href="classMovement.html#ad1b6c28feaef8796ce0564b4adfc9ca5">Movement.spriteRenderer</a></div><div class="ttdeci">SpriteRenderer spriteRenderer</div><div class="ttdef"><b>Definition</b> <a href="#l00033">Movement.cs:33</a></div></div>
+<div class="ttc" id="aclassMovement_html_ad9278ecc9daea58c9bc3737cc388e58f"><div class="ttname"><a href="classMovement.html#ad9278ecc9daea58c9bc3737cc388e58f">Movement.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Lee el teclado (A/D o flechas para moverse, W para saltar), comprueba con un Raycast si está en el su...</div><div class="ttdef"><b>Definition</b> <a href="#l00071">Movement.cs:71</a></div></div>
+<div class="ttc" id="aclassMovement_html_add5db38b0ed988ff05aa4a9a60b219db"><div class="ttname"><a href="classMovement.html#add5db38b0ed988ff05aa4a9a60b219db">Movement.mainModule</a></div><div class="ttdeci">ParticleSystem.MainModule mainModule</div><div class="ttdef"><b>Definition</b> <a href="#l00038">Movement.cs:38</a></div></div>
+<div class="ttc" id="aclassMovement_html_af9215338c4b90587c18157c1ccdf07d6"><div class="ttname"><a href="classMovement.html#af9215338c4b90587c18157c1ccdf07d6">Movement.wasOnGroundPreviousFrame</a></div><div class="ttdeci">bool wasOnGroundPreviousFrame</div><div class="ttdef"><b>Definition</b> <a href="#l00022">Movement.cs:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a class="el" href="Movement_8cs.html">Movement.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

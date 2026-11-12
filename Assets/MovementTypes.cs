@@ -2,6 +2,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Cambia de modo de movimiento con la tecla M y enseña su nombre durante 2 segundos.
+/// </summary>
 public class MovementTypes : MonoBehaviour
 {
     [SerializeField] private MovementStats currentStats;
@@ -14,6 +17,7 @@ public class MovementTypes : MonoBehaviour
     private float displayTime = 0f;
 
     // Start is called before the first frame update
+    /// <summary>Empieza con el primer modo y oculta el cartel.</summary>
     void Start()
     {
         currentStats = availableMovements[currentMovementIndex];
@@ -22,6 +26,7 @@ public class MovementTypes : MonoBehaviour
     }
 
     // Update is called once per frame
+    /// <summary>Cambia de modo al pulsar M y oculta el cartel cuando se acaba su tiempo.</summary>
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -37,6 +42,10 @@ public class MovementTypes : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Pasa al siguiente modo de la lista (vuelve al primero después del último), enseña su
+    /// nombre y se lo pasa a <see cref="Movement.UpdateStats"/>.
+    /// </summary>
     private void ChangeMovementMode()
     {
         currentMovementIndex++;
