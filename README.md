@@ -15,7 +15,7 @@
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=18&duration=3500&pause=800&color=7afffd&center=true&vCenter=true&width=600&lines=Desarrollado+en+Unity+con+C%23%3BSistema+de+movimiento+modular%3B6+modos+de+f%C3%ADsicas+intercambiables%3BUso+de+ScriptableObjects%3BPart%C3%ADculas+y+feedback+visual" alt="Typing SVG" /></a>
 </div>
 
-# 🚀 Sobre el Proyecto
+# Sobre el Proyecto
 
 **Multi-Move** es un **sandbox de plataformas 2D** que explora un sistema de movimiento avanzado con **múltiples configuraciones intercambiables** en tiempo real. El jugador controla un cubo que puede moverse, saltar y cambiar entre 6 modos de movimiento únicos, cada uno implementado como un `ScriptableObject` para una arquitectura modular y fácilmente extensible. El proyecto incluye un sistema de partículas visuales, cambios de color dinámicos según el estado del jugador y una cámara con seguimiento suave.
 
@@ -26,15 +26,15 @@
   <p><em>Mockup Multi-Move</em></p>
 </div>
 
-### ✨ Características principales:
+### Características principales:
 
-*   🤸 **Sistema de Movimiento Avanzado:** Controla un personaje que puede alternar entre **6 modos de movimiento** (Basic, Glider, Hectic, Rocket, Slippy Flappy y Underwater) al instante pulsando la tecla `M`. Un aviso en pantalla muestra durante 2 segundos el modo activo.
-*   🧩 **Arquitectura Modular con `ScriptableObjects`:** Cada modo de movimiento es un `ScriptableObject` independiente con 14 parámetros, lo que permite crear nuevas físicas desde el editor sin tocar código (*Create → Movement Stats*).
-*   🦘 **Salto con sensación de juego:** La altura depende de cuánto tiempo mantienes `W` (`maxJumpTime`), se puede saltar en el aire tantas veces como permita el modo (`onAirJumps`) y la **gravedad cambia en cada fase del salto**: subida, pico y caída. Así el salto se siente controlable en lugar de una parábola rígida.
-*   🎨 **Feedback Visual Dinámico:** El color del personaje cambia con cada salto en el aire siguiendo un degradado, y las partículas cambian de color según la fase (subida, pico, caída o en suelo). Hay partículas para saltar, para intentar saltar sin saltos disponibles, al aterrizar y al moverse.
-*   🎥 **Cámara Suave:** Un script de seguimiento (`CameraFollow`) acompaña al jugador con `Vector3.SmoothDamp`.
+*   **Sistema de Movimiento Avanzado:** Controla un personaje que puede alternar entre **6 modos de movimiento** (Basic, Glider, Hectic, Rocket, Slippy Flappy y Underwater) al instante pulsando la tecla `M`. Un aviso en pantalla muestra durante 2 segundos el modo activo.
+*   **Arquitectura Modular con `ScriptableObjects`:** Cada modo de movimiento es un `ScriptableObject` independiente con 14 parámetros, lo que permite crear nuevas físicas desde el editor sin tocar código (*Create → Movement Stats*).
+*   **Salto con sensación de juego:** La altura depende de cuánto tiempo mantienes `W` (`maxJumpTime`), se puede saltar en el aire tantas veces como permita el modo (`onAirJumps`) y la **gravedad cambia en cada fase del salto**: subida, pico y caída. Así el salto se siente controlable en lugar de una parábola rígida.
+*   **Feedback Visual Dinámico:** El color del personaje cambia con cada salto en el aire siguiendo un degradado, y las partículas cambian de color según la fase (subida, pico, caída o en suelo). Hay partículas para saltar, para intentar saltar sin saltos disponibles, al aterrizar y al moverse.
+*   **Cámara Suave:** Un script de seguimiento (`CameraFollow`) acompaña al jugador con `Vector3.SmoothDamp`.
 
-### 🎮 Controles
+### Controles
 
 <div align="center">
 
@@ -47,7 +47,7 @@
 
 </div>
 
-### ⚙️ Los 6 modos de movimiento
+### Los 6 modos de movimiento
 
 <div align="center">
 
@@ -62,18 +62,18 @@
 
 </div>
 
-### 🖼️ Capturas del Juego
+### Capturas del Juego
 
 | Movimiento | Cambio de modo |
 | :----------------------------------------------------------: | :------------------------------------------------------: |
 | <img src="https://github.com/user-attachments/assets/12c74a69-3316-4394-a5ac-d417081f0c8f" alt="Imagen de una partida" width="100%"/> | <img src="https://github.com/user-attachments/assets/3dad326d-67dc-43f5-9a8b-90b7a1e5b1ae" alt="Aviso en pantalla al cambiar de modo de movimiento" width="100%"/> |
 | *El cubo en movimiento con sus partículas.* | *Aviso del modo activo al pulsar `M`.* |
 
-# 🧠 Contexto del Proyecto
+# Contexto del Proyecto
 
 Este proyecto fue desarrollado como parte de la asignatura de **Programación** durante el primer año del ciclo formativo de **Desarrollo de Aplicaciones Multiplataforma (DAM)**. Sirvió como una introducción práctica a la programación orientada a objetos en C# dentro del motor de videojuegos Unity, centrándose en la creación de sistemas modulares y la gestión de físicas personalizadas.
 
-# 🛠️ Stack Tecnológico
+# Stack Tecnológico
 
 <div align="center">
   <img alt="Unity" src="https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white">
@@ -96,7 +96,7 @@ Este proyecto fue desarrollado como parte de la asignatura de **Programación** 
 
 </div>
 
-# 📂 Estructura del Proyecto
+# Estructura del Proyecto
 
 La estructura de archivos se organiza principalmente dentro de la carpeta `Assets`, separando los scripts principales, los `ScriptableObjects` que definen los modos de movimiento y la escena principal.
 
@@ -125,7 +125,7 @@ Multi-Move/
     └── ... (configuración del proyecto)
 ```
 
-# 🚀 Cómo Utilizar el Proyecto
+# Cómo Utilizar el Proyecto
 
 Para ejecutar este proyecto localmente necesitas **Unity Hub** y **Unity 2022.3 LTS** (el proyecto se creó con la 2022.3.50f1). Si solo quieres jugar, está [en itch.io](https://evagr.itch.io/multi-move).
 
