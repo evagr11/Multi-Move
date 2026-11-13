@@ -5,6 +5,7 @@
 <div align="center">
   <a href="https://github.com/evagr11/Multi-Move" target="_blank"><img alt="Ver Código" src="https://img.shields.io/badge/Ver_Código-181717?style=for-the-badge&logo=github&logoColor=white"></a>
   <a href="https://evagr11.github.io/Multi-Move/" target="_blank"><img src="https://img.shields.io/badge/Documentación_(Doxygen)-181717?style=for-the-badge&logo=doxygen&logoColor=white" alt="Documentación del código"></a>
+  <a href="docs/Documentacion_Multi-Move.pdf" target="_blank"><img src="https://img.shields.io/badge/Documentación-181717?style=for-the-badge&logo=latex&logoColor=white" alt="Documentación"></a>
   <a href="https://evagr11.github.io/Curriculum/proyectos/multi-move.html" target="_blank"><img alt="Ver Web" src="https://img.shields.io/badge/Ver_Web-4A90E2?style=for-the-badge&logo=google-chrome&logoColor=white"></a>
   <a href="https://evagr.itch.io/multi-move" target="_blank"><img alt="Ver en itch.io" src="https://img.shields.io/badge/Ver_en_itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white"></a>
 </div>
